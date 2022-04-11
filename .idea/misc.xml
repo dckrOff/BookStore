@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/A1Tech/AndroidStudioProjects/UPress/app/src/main/res/layout/activity_main.xml" value="0.35260416666666666" />
+        <entry key="..\:/Users/A1Tech/AndroidStudioProjects/UPress/app/src/main/res/drawable/button_bg.xml" value="0.29" />
+        <entry key="..\:/Users/A1Tech/AndroidStudioProjects/UPress/app/src/main/res/drawable/et_bg.xml" value="0.364" />
+        <entry key="..\:/Users/A1Tech/AndroidStudioProjects/UPress/app/src/main/res/layout/activity_main.xml" value="0.25" />
       </map>
     </option>
   </component>
@@ -12,5 +14,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.1" />
+      </ProjectState>
+    </option>
   </component>
 </project>
