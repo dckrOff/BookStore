@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignUpActivity">
+    tools:context=".LoginActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -21,7 +21,7 @@
                 android:id="@+id/imageView2"
                 android:layout_width="245dp"
                 android:layout_height="230dp"
-                android:src="@drawable/flower_bg"
+                android:src="@drawable/bg_sign_up"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -139,7 +139,8 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.215"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/edConfirmPass" />
+                    app:layout_constraintTop_toBottomOf="@+id/edConfirmPass"
+                    tools:ignore="TouchTargetSizeCheck" />
 
                 <TextView
                     android:id="@+id/linkToTermsAndConds"
@@ -155,7 +156,7 @@
             </LinearLayout>
 
             <Button
-                android:id="@+id/signUpButton"
+                android:id="@+id/signInButton"
                 android:layout_width="220dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="16dp"
@@ -164,7 +165,7 @@
                 android:gravity="center"
                 android:text="Sign Up"
                 android:textColor="@color/white"
-                app:backgroundTint="#fdc7c7"
+                app:backgroundTint="#5EFF6E"
                 app:backgroundTintMode="src_in"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -179,7 +180,7 @@
                 android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/signUpButton">
+                app:layout_constraintTop_toBottomOf="@+id/signInButton">
 
                 <TextView
                     android:id="@+id/checkBox"
@@ -204,6 +205,17 @@
                     app:layout_constraintTop_toTopOf="@+id/checkBox" />
 
             </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:fontFamily="@font/poppins_light"
+                android:text="UPress®"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout1" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

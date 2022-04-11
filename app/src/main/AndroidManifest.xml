@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.a1tech.upress" >
+    package="com.a1tech.upress">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -13,17 +13,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.Light.NoActionBar"
         android:usesCleartextTraffic="true"
-        tools:targetApi="m" >
+        android:windowSoftInputMode="adjustResize"
+        tools:targetApi="m">
         <activity
-            android:name=".SignInActivity"
-            android:exported="false" />
+            android:name=".LoginActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
-            android:name=".SignUpActivity"
+            android:name=".RegActivity"
             android:exported="true"
-            android:windowSoftInputMode="adjustResize" >
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
