@@ -1,4 +1,4 @@
-package com.a1tech.upress;
+package com.a1tech.upress.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,6 +12,8 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.a1tech.upress.R;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -43,7 +45,7 @@ public class LoginActivity extends AppCompatActivity {
         edPassword = findViewById(R.id.edPassword);
         signInButton = findViewById(R.id.signUpButton);
         rememberMe = findViewById(R.id.checkBox);
-        tvSignUp = findViewById(R.id.tvSignUpBtn);
+        tvSignUp = findViewById(R.id.tvSignInBtn);
     }
 
     private void buttons() {

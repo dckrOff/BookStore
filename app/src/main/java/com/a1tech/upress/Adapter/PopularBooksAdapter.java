@@ -1,4 +1,4 @@
-package com.a1tech.upress;
+package com.a1tech.upress.Adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -11,16 +11,18 @@ import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.a1tech.upress.R;
+
 import java.util.ArrayList;
 
 
-public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHolder> {
+public class PopularBooksAdapter extends RecyclerView.Adapter<PopularBooksAdapter.MyViewHolder> {
 
     ArrayList<String> personNames;
     ArrayList<Integer> personImages;
     Context context;
 
-    public CustomAdapter(Context context, ArrayList<String> personNames, ArrayList<Integer> personImages) {
+    public PopularBooksAdapter(Context context, ArrayList<String> personNames, ArrayList<Integer> personImages) {
         this.context = context;
         this.personNames = personNames;
         this.personImages = personImages;
@@ -29,7 +31,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         // infalte the item Layout
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_layout, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_popular_books, parent, false);
         // set the view's size, margins, paddings and layout parameters
         MyViewHolder vh = new MyViewHolder(v); // pass the view to View Holder
         return vh;
