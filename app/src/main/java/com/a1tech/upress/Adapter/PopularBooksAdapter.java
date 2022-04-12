@@ -2,6 +2,7 @@ package com.a1tech.upress.Adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,8 @@ import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.a1tech.upress.Activity.BookActivity;
+import com.a1tech.upress.Activity.MainActivity;
 import com.a1tech.upress.R;
 
 import java.util.ArrayList;
@@ -48,6 +51,9 @@ public class PopularBooksAdapter extends RecyclerView.Adapter<PopularBooksAdapte
             public void onClick(View view) {
                 // display a toast with person name on item click
                 Toast.makeText(context, personNames.get(position), Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(view.getContext(), BookActivity.class);
+                view.getContext().startActivity(intent);
             }
         });
 

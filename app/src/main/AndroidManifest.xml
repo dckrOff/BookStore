@@ -17,6 +17,9 @@
         android:windowSoftInputMode="adjustResize"
         tools:targetApi="m">
         <activity
+            android:name=".Activity.BookActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activity.MainActivity"
             android:exported="false" />
         <activity
