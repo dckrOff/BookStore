@@ -17,6 +17,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="35dp"
             android:layout_marginEnd="15dp"
+            android:layout_marginBottom="15dp"
             android:orientation="horizontal">
 
             <com.google.android.material.imageview.ShapeableImageView
@@ -36,8 +37,8 @@
                 android:layout_marginStart="8dp"
                 android:fontFamily="@font/poppins_semibold"
                 android:text="Hi, Azamat"
-                android:textSize="18sp"
                 android:textColor="@color/black"
+                android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/image"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -53,49 +54,64 @@
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <TextView
-            android:id="@+id/tvPopularBooks"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
             android:layout_below="@+id/navbar"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="15dp"
-            android:fontFamily="@font/poppins_semibold"
-            android:text="Popular Books"
-            android:textColor="@color/black"
-            android:textSize="35sp" />
+            android:layout_height="match_parent">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerPopular"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/tvPopularBooks"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="10dp"
-            android:paddingStart="20dp" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/tvNewest"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/recyclerPopular"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="15dp"
-            android:fontFamily="@font/poppins_semibold"
-            android:text="Newest"
-            android:textColor="@color/black"
-            android:textSize="35sp" />
+                <TextView
+                    android:id="@+id/tvPopularBooks"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/navbar"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="Popular Books"
+                    android:textColor="@color/black"
+                    android:textSize="35sp" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerNewest"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@+id/tvNewest"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="10dp"
-            android:paddingEnd="20dp"
-            android:paddingStart="20dp" />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerPopular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvPopularBooks"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginTop="10dp"
+                    android:paddingStart="20dp" />
 
+                <TextView
+                    android:id="@+id/tvNewest"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/recyclerPopular"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="Newest"
+                    android:textColor="@color/black"
+                    android:textSize="35sp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerNewest"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/tvNewest"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginTop="10dp"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp" />
+
+            </RelativeLayout>
+
+
+
+        </androidx.core.widget.NestedScrollView>
     </RelativeLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -36,7 +36,6 @@
             android:layout_below="@+id/name"
             android:layout_gravity="center_vertical"
             android:layout_marginStart="25dp"
-            android:layout_marginTop="15dp"
             android:fontFamily="@font/poppins_medium"
             android:text="Dana Thomas"
             android:textColor="#828285"

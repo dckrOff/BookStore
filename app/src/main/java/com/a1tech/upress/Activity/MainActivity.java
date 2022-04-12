@@ -45,6 +45,8 @@ public class MainActivity extends AppCompatActivity {
         //  call the constructor of CustomAdapter to send the reference and data to Adapter
         PopularBooksAdapter popularBooksAdapter = new PopularBooksAdapter(MainActivity.this, popularNames, popularImages);
         recyclerView.setAdapter(popularBooksAdapter); // set the Adapter to RecyclerView
+
+        recyclerView.setNestedScrollingEnabled(false);
     }
 
     private void recyclerViewNewest() {
@@ -56,6 +58,8 @@ public class MainActivity extends AppCompatActivity {
         //  call the constructor of CustomAdapter to send the reference and data to Adapter
         NewestAdapter newestAdapter = new NewestAdapter(MainActivity.this, newestNames, newestImages);
         recyclerView.setAdapter(newestAdapter); // set the Adapter to RecyclerView
+
+        recyclerView.setNestedScrollingEnabled(false);
     }
 
     private void transparentStatusBar() {
