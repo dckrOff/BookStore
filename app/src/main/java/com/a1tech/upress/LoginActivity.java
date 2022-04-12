@@ -50,6 +50,11 @@ public class LoginActivity extends AppCompatActivity {
         signInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
+
                 if (!edMail.getText().toString().trim().isEmpty() && !edPassword.getText().toString().trim().isEmpty()) {
                     // if edMail == regMail && edPassword == regPass -> Login Succesfull
                     // if checkbox == true save to sharedPrefs
