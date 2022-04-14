@@ -51,141 +51,161 @@
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <ImageView
-            android:id="@+id/bookImg"
+        <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:layout_below="@+id/navbar"
-            android:layout_marginTop="30dp"
-            android:src="@drawable/img4"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            android:layout_height="match_parent"
+            android:layout_above="@+id/parent"
+            android:layout_below="@+id/navbar">
 
-        <TextView
-            android:id="@+id/bookName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/bookImg"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="30dp"
-            android:fontFamily="@font/poppins_semibold"
-            android:gravity="center"
-            android:text="Yves Saint Laurent"
-            android:textColor="@color/black"
-            android:textSize="26dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/navbar">
 
-        <TextView
-            android:id="@+id/bookAutorName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/bookName"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:fontFamily="@font/poppins_medium"
-            android:gravity="center"
-            android:text="Suzy Menkes"
-            android:textColor="#828285"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+                <ImageView
+                    android:id="@+id/bookImg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/navbar"
+                    android:src="@drawable/img4"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
 
+                <TextView
+                    android:id="@+id/bookName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/bookImg"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="30dp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:gravity="center"
+                    android:text="Yves Saint Laurent"
+                    android:textColor="@color/black"
+                    android:textSize="26dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
 
-        <LinearLayout
-            android:id="@+id/llRating"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/bookAutorName"
-            android:gravity="center">
+                <TextView
+                    android:id="@+id/bookAutorName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/bookName"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:fontFamily="@font/poppins_medium"
+                    android:gravity="center"
+                    android:text="Suzy Menkes"
+                    android:textColor="#828285"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
 
-            <ImageView
-                android:id="@+id/ratingImg"
-                android:layout_width="120dp"
-                android:layout_height="30dp"
-                android:layout_below="@+id/bookAutorName"
-                android:src="@drawable/stars4" />
+                <LinearLayout
+                    android:id="@+id/llRating"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/bookAutorName"
+                    android:gravity="center">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:fontFamily="@font/poppins_medium"
-                android:text="4.0"
-                android:textColor="@color/black"
-                android:textSize="15sp"
-                android:textStyle="bold" />
+                    <ImageView
+                        android:id="@+id/ratingImg"
+                        android:layout_width="120dp"
+                        android:layout_height="30dp"
+                        android:layout_below="@+id/bookAutorName"
+                        android:src="@drawable/stars4" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins_medium"
-                android:text=" / 5.0"
-                android:textSize="15sp"
-                android:textStyle="bold" />
-        </LinearLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="4.0"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/bookDescription"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/llRating"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:fontFamily="@font/poppins_medium"
-            android:gravity="center"
-            android:justificationMode="inter_word"
-            android:padding="20dp"
-            android:text="A spectacular visual journey through 40 years of haute couture from one of the best-known and most trend-setting brands in fashion."
-            android:textColor="#828285"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text=" / 5.0"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/linerLayoutViewBtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/bookDescription"
-            android:layout_marginTop="10dp"
-            android:padding="10dp"
-            android:gravity="center">
+                <TextView
+                    android:id="@+id/bookDescription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/llRating"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:fontFamily="@font/poppins_medium"
+                    android:gravity="center"
+                    android:justificationMode="inter_word"
+                    android:padding="20dp"
+                    android:text="A spectacular visual journey through 40 years of haute couture from one of the best-known and most trend-setting brands in fashion."
+                    android:textColor="#828285"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="start"
-                android:layout_marginEnd="25dp"
-                android:background="@drawable/button_bg"
-                android:fontFamily="@font/poppins_medium"
-                android:paddingStart="30dp"
-                android:paddingEnd="30dp"
-                android:text="Preview"
-                android:textColor="@color/black"
-                app:backgroundTint="#FFFFFF" />
+                <RelativeLayout
+                    android:id="@+id/linerLayoutViewBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/bookDescription"
+                    android:layout_margin="5dp">
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                android:layout_marginStart="25dp"
-                android:background="@drawable/button_bg"
-                android:fontFamily="@font/poppins_medium"
-                android:paddingStart="30dp"
-                android:paddingEnd="30dp"
-                android:text="Preview"
-                android:textColor="@color/black"
-                app:backgroundTint="#FFFFFF" />
-        </LinearLayout>
+                    <Button
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="40dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginBottom="6dp"
+                        android:background="@drawable/button_bg"
+                        android:fontFamily="@font/poppins_medium"
+                        android:paddingStart="30dp"
+                        android:paddingEnd="30dp"
+                        android:text="Preview"
+                        android:textColor="@color/black"
+                        app:backgroundTint="#FFFFFF" />
+
+                    <Button
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="6dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginEnd="40dp"
+                        android:layout_marginBottom="6dp"
+                        android:background="@drawable/button_bg"
+                        android:fontFamily="@font/poppins_medium"
+                        android:paddingStart="30dp"
+                        android:paddingEnd="30dp"
+                        android:text="Review"
+                        android:textColor="@color/black"
+                        app:backgroundTint="#FFFFFF" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:layout_below="@+id/linerLayoutViewBtn" />
+            </RelativeLayout>
+        </androidx.core.widget.NestedScrollView>
 
         <Button
+            android:id="@+id/buyBtn"
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="43dp"
-            android:layout_marginEnd="43dp"
-            android:layout_marginBottom="50dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginBottom="30dp"
             android:background="@drawable/button_bg"
             android:fontFamily="@font/poppins_medium"
             android:text="Buy Now for $46.99"
