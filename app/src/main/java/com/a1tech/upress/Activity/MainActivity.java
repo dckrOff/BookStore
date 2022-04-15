@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
 
@@ -13,12 +14,13 @@ import com.a1tech.upress.Adapter.NewestAdapter;
 import com.a1tech.upress.Adapter.PopularBooksAdapter;
 import com.a1tech.upress.Model.Books;
 import com.a1tech.upress.R;
+import com.a1tech.upress.Utils.BooksList;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
 
+    final private String TAG = "MainActivity";
     private ArrayList<Books> books = new ArrayList<>();
 
     @Override
@@ -26,13 +28,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        addBooks();
+        setData();
+        setAdapterPopBooks();
+        setAdapterNewBooks();
         transparentStatusBar();
-        recyclerViewPopularBooks();
-        recyclerViewNewest();
     }
 
-    private void recyclerViewPopularBooks() {
+    private void setData() {
+        BooksList booksList = new BooksList();
+        books.addAll(booksList.addBooks());
+    }
+
+    private void setAdapterPopBooks() {
         // get the reference of RecyclerView
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerPopular);
         // set a LinearLayoutManager with default horizontal orientation and false value for reverseLayout to show the items from start to end
@@ -44,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setNestedScrollingEnabled(false);
     }
 
-    private void recyclerViewNewest() {
+    private void setAdapterNewBooks() {
         // get the reference of RecyclerView
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerNewest);
         // set a LinearLayoutManager with default horizontal orientation and false value for reverseLayout to show the items from start to end
@@ -65,29 +72,4 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void addBooks() {
-        books.add(new Books("Fashionopolis", "Dana Thomas", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", "4.0", R.drawable.img1, R.drawable.ic_stars4, 1));
-        books.add(new Books("Chanel", "Patrick Mauriès", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "3.0", R.drawable.img2, R.drawable.ic_stars3, 2));
-        books.add(new Books("Calligraphy", "June & Lucy", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "5.0", R.drawable.img3, R.drawable.ic_stars5, 3));
-        books.add(new Books("Fashionopolis", "Dana Thomas", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", "4.0", R.drawable.img1, R.drawable.ic_stars4, 1));
-        books.add(new Books("Chanel", "Patrick Mauriès", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "3.0", R.drawable.img2, R.drawable.ic_stars3, 2));
-        books.add(new Books("Calligraphy", "June & Lucy", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "5.0", R.drawable.img3, R.drawable.ic_stars5, 3));
-        books.add(new Books("Fashionopolis", "Dana Thomas", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", "4.0", R.drawable.img1, R.drawable.ic_stars4, 1));
-        books.add(new Books("Chanel", "Patrick Mauriès", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "3.0", R.drawable.img2, R.drawable.ic_stars3, 2));
-        books.add(new Books("Calligraphy", "June & Lucy", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "5.0", R.drawable.img3, R.drawable.ic_stars5, 3));
-        books.add(new Books("Fashionopolis", "Dana Thomas", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", "4.0", R.drawable.img1, R.drawable.ic_stars4, 1));
-        books.add(new Books("Chanel", "Patrick Mauriès", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "3.0", R.drawable.img2, R.drawable.ic_stars3, 2));
-        books.add(new Books("Calligraphy", "June & Lucy", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "5.0", R.drawable.img3, R.drawable.ic_stars5, 3));
-        books.add(new Books("Fashionopolis", "Dana Thomas", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", "4.0", R.drawable.img1, R.drawable.ic_stars4, 1));
-        books.add(new Books("Chanel", "Patrick Mauriès", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "3.0", R.drawable.img2, R.drawable.ic_stars3, 2));
-        books.add(new Books("Calligraphy", "June & Lucy", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "5.0", R.drawable.img3, R.drawable.ic_stars5, 3));
-        books.add(new Books("Fashionopolis", "Dana Thomas", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", "4.0", R.drawable.img1, R.drawable.ic_stars4, 1));
-        books.add(new Books("Chanel", "Patrick Mauriès", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "3.0", R.drawable.img2, R.drawable.ic_stars3, 2));
-        books.add(new Books("Calligraphy", "June & Lucy", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "5.0", R.drawable.img3, R.drawable.ic_stars5, 3));
-
-    }
-
-    public ArrayList<Books> getBooks() {
-        return books;
-    }
 }

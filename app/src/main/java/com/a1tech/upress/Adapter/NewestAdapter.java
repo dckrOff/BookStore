@@ -46,13 +46,12 @@ public class NewestAdapter extends RecyclerView.Adapter<NewestAdapter.MyViewHold
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(view.getContext(), books.getBookName(), Toast.LENGTH_SHORT).show();
-//                Intent intent = new Intent(view.getContext(), BookActivity.class);
-//                view.getContext().startActivity(intent);
+                Intent intent = new Intent(view.getContext(), BookActivity.class);
+                intent.putExtra("bookId", books.getBookId());
+                view.getContext().startActivity(intent);
             }
         });
     }
-
 
     @Override
     public int getItemCount() {

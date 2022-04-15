@@ -10,52 +10,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/navbar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="35dp"
-            android:layout_marginEnd="15dp"
-            android:layout_marginBottom="15dp"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:padding="16dp"
-                android:src="@drawable/ic_back"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginEnd="60dp"
-                android:padding="16dp"
-                android:src="@drawable/ic_save"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:padding="16dp"
-                android:src="@drawable/ic_settings"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_above="@+id/parent"
-            android:layout_below="@+id/navbar">
+            android:layout_alignParentTop="true"
+            android:overScrollMode="never">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -65,11 +25,12 @@
                 <ImageView
                     android:id="@+id/bookImg"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/navbar"
-                    android:src="@drawable/img4"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
+                    android:layout_height="450dp"
+                    android:paddingTop="90dp"
+                    android:layout_alignParentTop="true"
+                    android:paddingStart="40dp"
+                    android:paddingEnd="40dp"
+                    android:src="@drawable/img4" />
 
                 <TextView
                     android:id="@+id/bookName"
@@ -151,69 +112,91 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent" />
 
-                <RelativeLayout
-                    android:id="@+id/linerLayoutViewBtn"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/bookDescription"
-                    android:layout_margin="5dp">
 
-                    <Button
-                        android:layout_width="150dp"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentStart="true"
-                        android:layout_marginStart="40dp"
-                        android:layout_marginTop="6dp"
-                        android:layout_marginBottom="6dp"
-                        android:background="@drawable/button_bg"
-                        android:fontFamily="@font/poppins_medium"
-                        android:paddingStart="30dp"
-                        android:paddingEnd="30dp"
-                        android:text="Preview"
-                        android:textColor="@color/black"
-                        app:backgroundTint="#FFFFFF" />
-
-                    <Button
-                        android:layout_width="150dp"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:layout_marginStart="6dp"
-                        android:layout_marginTop="6dp"
-                        android:layout_marginEnd="40dp"
-                        android:layout_marginBottom="6dp"
-                        android:background="@drawable/button_bg"
-                        android:fontFamily="@font/poppins_medium"
-                        android:paddingStart="30dp"
-                        android:paddingEnd="30dp"
-                        android:text="Review"
-                        android:textColor="@color/black"
-                        app:backgroundTint="#FFFFFF" />
-                </RelativeLayout>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="110dp"
-                    android:layout_below="@+id/linerLayoutViewBtn" />
             </RelativeLayout>
         </androidx.core.widget.NestedScrollView>
 
-        <Button
-            android:id="@+id/buyBtn"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
+            android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="40dp"
-            android:layout_marginEnd="40dp"
-            android:layout_marginBottom="30dp"
-            android:background="@drawable/button_bg"
-            android:fontFamily="@font/poppins_medium"
-            android:text="Buy Now for $46.99"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            app:backgroundTint="#000000" />
+            android:gravity="center"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
 
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                android:layout_alignParentEnd="true"
+                android:layout_margin="10dp"
+                android:textSize="12sp"
+                android:background="@drawable/button_bg"
+                android:drawableLeft="@drawable/ic_card"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Add to card"
+                android:textColor="@color/black"
+                app:backgroundTint="#FFFFFF" />
+
+            <Button
+                android:id="@+id/buyBtn"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="10dp"
+                android:background="@drawable/button_bg"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Buy $46.99"
+                android:textSize="12sp"
+                android:textColor="@color/white"
+                app:backgroundTint="#000000" />
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/navbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:alpha="0.7"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:paddingStart="20dp"
+            android:paddingTop="35dp"
+            android:paddingEnd="20dp">
+
+            <ImageView
+                android:id="@+id/backBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:padding="16dp"
+                android:src="@drawable/ic_back"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginEnd="60dp"
+                android:padding="16dp"
+                android:src="@drawable/ic_save"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="16dp"
+                android:src="@drawable/ic_settings"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

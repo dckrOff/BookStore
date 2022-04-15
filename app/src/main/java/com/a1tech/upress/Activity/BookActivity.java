@@ -2,20 +2,25 @@ package com.a1tech.upress.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.a1tech.upress.Model.Books;
 import com.a1tech.upress.R;
+import com.a1tech.upress.Utils.BooksList;
 
 import java.util.ArrayList;
 
 public class BookActivity extends AppCompatActivity {
 
     final private String TAG = "BookActivity";
-    private ImageView bookImage, bookRating;
+    private ImageView bookImage, bookRating, backBtn;
     private TextView bookName, bookAuthorName, bookTvRating, bookDescription;
     private ArrayList<Books> books = new ArrayList<>();
     private int bookdId;
@@ -25,17 +30,9 @@ public class BookActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book);
 
-        Bundle arguments = getIntent().getExtras();
-        bookdId = arguments.getInt("bookId");
-
-        Log.e(TAG, String.valueOf(bookdId));
-
-        MainActivity mainActivity = new MainActivity();
-        books.addAll(mainActivity.getBooks());
-//        Log.e(TAG, "sdasada --> " + );
-
         initView();
         setData();
+        transparentStatusBar();
     }
 
     private void initView() {
@@ -45,15 +42,24 @@ public class BookActivity extends AppCompatActivity {
         bookAuthorName = findViewById(R.id.bookAutorName);
         bookTvRating = findViewById(R.id.tvRating);
         bookDescription = findViewById(R.id.bookDescription);
+        backBtn = findViewById(R.id.backBtn);
+
+        BooksList booksList = new BooksList();
+        Bundle arguments = getIntent().getExtras();
+        bookdId = arguments.getInt("bookId");
+        books.addAll(booksList.addBooks());
+
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
     }
 
     private void setData() {
-        Log.e(TAG, "setData ga kirdi");
-        Log.e(TAG, "book size =>" + books.size());
         for (int i = 0; i < books.size(); i++) {
-            Log.e(TAG, "for ga kirdi");
             if (books.get(i).getBookId() == bookdId) {
-                Log.e(TAG, "if ga kirdi");
                 bookImage.setImageResource(books.get(i).getBookImage());
                 bookRating.setImageResource(books.get(i).getImgRating());
                 bookName.setText(books.get(i).getBookName());
@@ -61,6 +67,14 @@ public class BookActivity extends AppCompatActivity {
                 bookTvRating.setText(books.get(i).getTvRating());
                 bookDescription.setText(books.get(i).getDescription());
             }
+        }
+    }
+
+    private void transparentStatusBar() {
+        // In Activity's onCreate() for instance
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            Window w = getWindow();
+            w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
         }
     }
 }
