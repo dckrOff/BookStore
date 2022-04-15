@@ -13,7 +13,7 @@ import android.widget.Toast;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.a1tech.upress.Activity.BookActivity;
-import com.a1tech.upress.Activity.MainActivity;
+import com.a1tech.upress.Model.Books;
 import com.a1tech.upress.R;
 
 import java.util.ArrayList;
@@ -21,62 +21,52 @@ import java.util.ArrayList;
 
 public class PopularBooksAdapter extends RecyclerView.Adapter<PopularBooksAdapter.MyViewHolder> {
 
-    ArrayList<String> personNames;
-    ArrayList<Integer> personImages;
-    Context context;
+    private final LayoutInflater inflater;
+    private final ArrayList<Books> books;
 
-    public PopularBooksAdapter(Context context, ArrayList<String> personNames, ArrayList<Integer> personImages) {
-        this.context = context;
-        this.personNames = personNames;
-        this.personImages = personImages;
+    public PopularBooksAdapter(Context context, ArrayList<Books> books) {
+        this.books = books;
+        this.inflater = LayoutInflater.from(context);
     }
+
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        // infalte the item Layout
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_popular_books, parent, false);
-        // set the view's size, margins, paddings and layout parameters
-        MyViewHolder vh = new MyViewHolder(v); // pass the view to View Holder
-        return vh;
+        View view = inflater.inflate(R.layout.item_popular_books, parent, false);
+        return new MyViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, @SuppressLint("RecyclerView") final int position) {
-        // set the data in items
-        holder.name.setText(personNames.get(position));
-        holder.image.setImageResource(personImages.get(position));
-        // implement setOnClickListener event on item view.
+        Books books = this.books.get(position);
+        holder.bookName.setText(books.getBookName());
+        holder.bookAutorName.setText(books.getAuthorName());
+        holder.bookImage.setImageResource(books.getBookImage());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // display a toast with person name on item click
-                Toast.makeText(context, personNames.get(position), Toast.LENGTH_SHORT).show();
-
                 Intent intent = new Intent(view.getContext(), BookActivity.class);
+                intent.putExtra("bookId", books.getBookId());
                 view.getContext().startActivity(intent);
             }
         });
-
     }
 
 
     @Override
     public int getItemCount() {
-        return personNames.size();
+        return books.size();
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        // init the item view's
-        TextView name;
-        ImageView image;
+        TextView bookName, bookAutorName;
+        ImageView bookImage;
 
         public MyViewHolder(View itemView) {
             super(itemView);
-
-            // get the reference of item view's
-            name = (TextView) itemView.findViewById(R.id.name);
-            image = (ImageView) itemView.findViewById(R.id.image);
-
+            bookName = itemView.findViewById(R.id.popBookName);
+            bookAutorName = itemView.findViewById(R.id.popAuthorName);
+            bookImage = itemView.findViewById(R.id.popBookImage);
         }
     }
 }

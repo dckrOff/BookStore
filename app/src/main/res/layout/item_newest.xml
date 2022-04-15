@@ -3,10 +3,10 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:padding="5dp">
+    android:padding="10dp">
 
     <ImageView
-        android:id="@+id/image"
+        android:id="@+id/newBookImage"
         android:layout_width="110dp"
         android:layout_height="170dp"
         android:src="@drawable/img1" />
@@ -17,7 +17,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/name"
+            android:id="@+id/newBookName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
@@ -30,10 +30,10 @@
             android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/name2"
+            android:id="@+id/newAuthorName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/name"
+            android:layout_below="@+id/newBookName"
             android:layout_gravity="center_vertical"
             android:layout_marginStart="25dp"
             android:fontFamily="@font/poppins_medium"
@@ -42,6 +42,7 @@
             android:textSize="13sp" />
 
         <ImageView
+            android:id="@+id/newIvRating"
             android:layout_width="120dp"
             android:layout_height="30dp"
             android:layout_alignParentStart="true"
@@ -49,7 +50,7 @@
             android:layout_gravity="bottom"
             android:layout_marginStart="25dp"
             android:layout_marginBottom="30dp"
-            android:src="@drawable/stars4" />
+            android:src="@drawable/ic_stars4" />
 
         <ImageView
             android:layout_width="20dp"
@@ -58,6 +59,34 @@
             android:layout_alignParentEnd="true"
             android:layout_marginTop="15dp"
             android:src="@drawable/ic_save" />
+
+        <TextView
+            android:id="@+id/newTvRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/newIvRating"
+            android:layout_alignBottom="@+id/newIvRating"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@+id/newIvRating"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
+            android:text="4.0"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/newTvRating"
+            android:layout_alignBottom="@+id/newTvRating"
+            android:layout_toEndOf="@+id/newTvRating"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
+            android:text=" / 5.0"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
     </RelativeLayout>
 
 </LinearLayout>
