@@ -7,6 +7,7 @@
     tools:context=".Activity.MainActivity">
 
     <RelativeLayout
+        android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -56,8 +57,8 @@
 
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_below="@+id/navbar"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_below="@+id/navbar">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -107,11 +108,18 @@
                     android:paddingStart="20dp"
                     android:paddingEnd="20dp" />
 
+
             </RelativeLayout>
-
-
-
         </androidx.core.widget.NestedScrollView>
     </RelativeLayout>
 
+    <Button
+        android:id="@+id/btnCrash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="test crash"
+        app:layout_constraintBottom_toBottomOf="@+id/relativeLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

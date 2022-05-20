@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -47,7 +46,7 @@ public class BookActivity extends AppCompatActivity {
         BooksList booksList = new BooksList();
         Bundle arguments = getIntent().getExtras();
         bookdId = arguments.getInt("bookId");
-        books.addAll(booksList.addBooks());
+        books.addAll(booksList.getBooks());
 
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
