@@ -1,7 +1,7 @@
 # UPress
-The mobile application of UPress
+The mobile application of BookStore
 
-Snapshots:
+# Snapshots
 
 Samsung Galaxy Tab E
 
